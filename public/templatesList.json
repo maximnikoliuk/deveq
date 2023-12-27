@@ -1,0 +1,23 @@
+{
+  "templates": [
+    {
+      "title": "Template 1",
+      "instructions": "You are going to analyze an email to a very respected financial donor at a time of bad relations with that person. This is the text of the email: '%Email%'. Ideally you want to reach out and thank them for their support and provide brief information on how their money is spent. You do not want to ask them for new money. You do not want to spend time introducing yourself. You do not want to mention the recent tensions with the donor. You want to acknowledge their support. You want to be very polite.",
+      "criteria": "Please rank it between 1 and 5 according to the specified criteria. Respect, brevity, grammar, language, acknowledgement of support, detailed usage of funds with examples, positive update, avoidance of negative topics, no solicitation, personalization, avoidance of a long introduction. I want to see ranks only, followed by an up to a 5 word description of why that particular rank is given.",
+      "perfectEmail": "perfect email text"
+    },
+    {
+      "title": "Template 2",
+      "instructions": "You are going to analyze an email to a very respected financial donor at a time of bad relations with that person. This is the text of the email: '%Email%'. Ideally you want to reach out and thank them for their support and provide brief information on how their money is spent. You do not want to ask them for new money. You do not want to spend time introducing yourself. You do not want to mention the recent tensions with the donor. You want to acknowledge their support. You want to be very polite.",
+      "criteria": "Please rank it between 1 and 5 according to the specified criteria. Respect, brevity, grammar, language, acknowledgement of support, detailed usage of funds with examples, positive update, avoidance of negative topics, no solicitation, personalization, avoidance of a long introduction. I want to see ranks only, followed by an up to a 5 word description of why that particular rank is given.",
+      "perfectEmail": "perfect email text"
+    },
+    {
+      "title": "Template 3",
+      "instructions": "You are going to analyze an email to a very respected financial donor at a time of bad relations with that person. This is the text of the email: '%Email%'. Ideally you want to reach out and thank them for their support and provide brief information on how their money is spent. You do not want to ask them for new money. You do not want to spend time introducing yourself. You do not want to mention the recent tensions with the donor. You want to acknowledge their support. You want to be very polite.",
+      "criteria": "Please rank it between 1 and 5 according to the specified criteria. Respect, brevity, grammar, language, acknowledgement of support, detailed usage of funds with examples, positive update, avoidance of negative topics, no solicitation, personalization, avoidance of a long introduction. I want to see ranks only, followed by an up to a 5 word description of why that particular rank is given.",
+      "perfectEmail": "perfect email text"
+    }
+  ],
+  "responseStructure": "Provide output in the form of JSON object. First field of the object is 'table'(array). Each item of the array is an object with 'criteria'(string), 'rank'(number 1-5) and 'description' (string)."
+}
