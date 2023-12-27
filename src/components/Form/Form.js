@@ -58,9 +58,9 @@ function Form() {
   return (
     <Container className="form-container" maxWidth>
       <Typography variant="h6" pt={"24px"}>
-        Current template
+        Current template:
       </Typography>
-      <Typography variant="body1">{currentTemplate.email}</Typography>
+      <Typography variant="body1">{currentTemplate?.title}</Typography>
       <Typography variant="h5" p={"24px"}>
         Insert your promt
       </Typography>
