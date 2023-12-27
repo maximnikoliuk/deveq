@@ -12,14 +12,13 @@ function Form() {
   const [promt, setPromt] = useState('');
 
   const sendPromt = async () => {
-    const fullPromt = currentTemplate.email.replace("%Email%", promt);
-    const testPpomt = `
-  Generate 2 questions for quiz to check English level.
-  Provide output in the form of JSON array. Each item is an object with 
-  "question"(string) and "options" property(array).
-  Each optio property contains 2 answers.`;
-    const res = await api.sendMessage(testPpomt);
-    console.log(res, 'resp');
+   try {
+     const fullPromt = currentTemplate.email.replace("%Email%", promt);
+     const res = await api.sendMessage(fullPromt);
+     console.log(res, 'res');
+   } catch (e) {
+     console.log(e, 'Error');
+   }
   };
 
   return (
