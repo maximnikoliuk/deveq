@@ -2,15 +2,20 @@
   "templates": [
     {
       "title": "Template 1",
-      "email": "Input 1. %Email%. Ranks"
+      "propmt": "Input 1. %Email%. Ranks",
+      "perfectEmail": "perfect email text",
+      "criteria": "criteria text"
     },
     {
       "title": "Template 2",
-      "email": "Input 2. %Email%. Ranks"
+      "email": "Input 2. %Email%. Ranks",
+      "perfectEmail": "perfect email text"
     },
     {
       "title": "Template 2",
-      "email": "Input 2. %Email%. Ranks"
+      "email": "Input 2. %Email%. Ranks",
+      "perfectEmail": "perfect email text"
     }
-  ]
+  ],
+  "responseStructure": "Provide output in the form of JSON object. First field of the object is 'table'(array). Each item of the array is an object with 'criteria'(string), 'rank'(number 1-5) and 'description' (string). Second field of the object is 'optimalAnswer'(string)."
 }
