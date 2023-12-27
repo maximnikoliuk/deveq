@@ -1,43 +1,24 @@
-import React, { useEffect } from 'react';
-import './landing.scss';
-import {Box, Container, Stack, Typography} from "@mui/material";
+import React from "react";
+import { Button, Container, Box } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import "./info.scss";
 
-function Landing() {
+function Info() {
+  const navigate = useNavigate();
   return (
-      <>
-        <Container className='logo-container' maxWidth>
-          <Box
-              display="flex"
-              justifyContent="center"
-              alignItems="flex-end"
-              style={{
-                height: '100%'
-              }}
-          >
-            <Stack
-                direction='column'
-                spacing={8}
-                p={'24px'}
-            >
-              <Typography variant="h1">
-                DevEQ
-              </Typography>
-              <Typography variant="h1">
-                SKILLS for the AI AGE
-              </Typography>
-              <Typography variant="h6">
-                Forging tomorrow, unseen.
-              </Typography>
-            </Stack>
-          </Box>
-        </Container>
-        <Container className='info-container' maxWidth>
-          <Typography p={'24px'} variant="h6">
-            Go to form
-          </Typography>
-        </Container>
-      </>
+    <Container className="info-container" maxWidth>
+      <Box p={"24px"}>
+        <Button
+            variant="outlined"
+            onClick={() => {
+              navigate("/forms/1")
+            }}
+        >
+          Go to form
+        </Button>
+      </Box>
+    </Container>
   )
 }
 
-export default Landing;
+export default Info;

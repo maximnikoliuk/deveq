@@ -1,4 +1,5 @@
 .logo-container {
+  background-color: rgb(28, 121, 156);
   height: 500px;
   //min-height: 500px;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%), url("../../assets/logo.webp");
@@ -13,18 +14,10 @@
   }
 }
 
-.info-container {
-  height: 200px;
-  background-color: rgb(255, 255, 255);
-}
-
 @media (min-width: 1024px) {
   .logo-container {
     //min-height: 85vh;
     height: 85vh;
-  }
-  .info-container {
-    height: 15vh;
   }
 }
 

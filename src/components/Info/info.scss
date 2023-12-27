@@ -1,53 +1,11 @@
-.logo-container {
-  height: 500px;
-  //min-height: 500px;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%), url("../../assets/logo.webp");
-  background-size: auto, cover;
-  background-blend-mode: normal;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: rgb(247, 247, 247);
-  h1:nth-child(2) {
-    border-bottom: 1px solid rgb(247, 247, 247);
-    padding: 0 70px;
-  }
-}
-
 .info-container {
+  text-align: center;
   height: 200px;
   background-color: rgb(255, 255, 255);
 }
 
 @media (min-width: 1024px) {
-  .logo-container {
-    //min-height: 85vh;
-    height: 85vh;
-  }
   .info-container {
     height: 15vh;
   }
 }
-
-//@media (max-width: 450px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 450px) and (min-resolution: 192dpi) {
-//  .logo-container {
-//    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%), url("../../assets/logo.webp");
-//  }
-//}
-//
-//@media (min-width: 451px) and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 451px) and (max-width: 767px) and (min-resolution: 192dpi) {
-//  .logo-container {
-//    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%), url("../../assets/logo.webp");
-//  }
-//}
-//
-//@media (min-width: 768px) and (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and (max-width: 1023px) and (min-resolution: 192dpi) {
-//  .logo-container {
-//    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%), url("../../assets/logo.webp");
-//  }
-//}
-//
-//@media (min-width: 1024px) and (max-width: 1279px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1024px) and (max-width: 1279px) and (min-resolution: 192dpi) {
-//  .logo-container {
-//    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%), url("../../assets/logo.webp");
-//  }
-//}

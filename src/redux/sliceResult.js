@@ -1,24 +1,38 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { StateCourses } from '../types/CoursesTypes';
 
-const initialState: StateCourses = {
-  coursesList: [],
-  totalCount: 7
+const initialState = {
+  gptResult: [
+    {
+      name: "Val10",
+      name2: "Val20",
+      name3: "Val30",
+    },
+    {
+      name: "Val11",
+      name2: "Val21",
+      name3: "Val31",
+    },
+    {
+      name: "Val13",
+      name2: "Val23",
+      name3: "Val33",
+    }
+  ]
 };
 
-export const sliceCourses = createSlice({
-  name: 'auth',
-  initialState: initialState as StateCourses,
+export const sliceResult = createSlice({
+  name: 'result',
+  initialState: initialState,
   reducers: {
-    setCourses: (state, { payload }) => {
-      state.coursesList = payload;
+    setResult: (state, { payload }) => {
+      state.gptResult = payload;
     },
     reset: () => initialState,
   },
 });
 
 export const {
-  setCourses,
-} = sliceCourses.actions;
+  setResult,
+} = sliceResult.actions;
 
-export default sliceCourses.reducer;
+export default sliceResult.reducer;

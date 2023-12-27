@@ -11,11 +11,11 @@ export const DeveqTheme = createTheme({
     },
   },
   palette: {
-    background: {
-      default: '#F4F5FF',
-    },
+    // background: {
+    //   default: 'rgb(28, 121, 156)',
+    // },
     primary: {
-      main: "#39848A",
+      main: "rgb(28, 121, 156)",
     },
     secondary: {
       main: "#64f5e9",
@@ -34,39 +34,30 @@ export const DeveqTheme = createTheme({
         },
       },
     },
-    MuiDialogTitle: {
-      styleOverrides: {
-        root: {
-          backgroundColor: '#39848A',
-          padding: '11px 24px',
-          '&+.MuiDialogContent-root': {
-            paddingTop: '24px !important',// Because of issue in Mui 5
-          },
-        },
-      },
-    },
     MuiTypography: {
       styleOverrides: {
         root: {
-          fontFamily: `"Open Sans", sans-serif`,
+          fontFamily: `"Lato", arial, sans-serif`,
+          textAlign: 'center'
         },
         h1: {
-          fontSize: "40px"
+          fontSize: "64px",
+          textTransform: "uppercase"
         },
         h2: {
-          fontSize: "32px"
+          fontSize: "56px"
         },
         h3: {
-          fontSize: "28px"
+          fontSize: "48px"
         },
         h4: {
-          fontSize: "24px"
+          fontSize: "40px"
         },
         h5: {
-          fontSize: "20px"
+          fontSize: "32px"
         },
         h6: {
-          fontSize: "18px"
+          fontSize: "22px"
         },
         body1: {
           fontSize: "16px"
