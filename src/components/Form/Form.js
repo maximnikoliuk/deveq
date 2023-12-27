@@ -33,7 +33,7 @@ function Form() {
     if (+id > templates.length) {
       navigate(`/forms/${templates.length}`);
     }
-  }, []);
+  }, [templates.length, id, navigate]);
 
   const sendPromt = async () => {
     try {
