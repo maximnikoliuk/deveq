@@ -2,15 +2,15 @@
   "templates": [
     {
       "title": "Template 1",
-      "email": "Input 1 %Email% Ranks"
+      "email": "Input 1. %Email%. Ranks"
     },
     {
       "title": "Template 2",
-      "email": "Input 2 %Email% Ranks"
+      "email": "Input 2. %Email%. Ranks"
     },
     {
       "title": "Template 2",
-      "email": "Input 2 %Email% Ranks"
+      "email": "Input 2. %Email%. Ranks"
     }
   ]
 }
