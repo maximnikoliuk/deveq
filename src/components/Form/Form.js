@@ -10,7 +10,7 @@ import {
 import { useNavigate, useParams } from "react-router-dom";
 import templatesList from "../../../public/templatesList.json";
 import "./form.scss";
-import { api } from "../../chatGpt/chatApi";
+import { postPrompt } from "../../api/prompt";
 import { useDispatch } from "react-redux";
 import { setResult } from "../../redux/sliceResult";
 
@@ -43,11 +43,11 @@ function Form() {
       );
       const fullPrompt = `${populatedInstructions} \n ${currentTemplate.criteria} \n ${responseStructure}`;
 
-      const res = await api.sendMessage(fullPrompt);
+      const res = await postPrompt(fullPrompt);
 
-      const parsedResult = JSON.parse(res?.text);
-      if (parsedResult?.table) {
-        dispatch(setResult(parsedResult.table));
+      const tableData = res?.result?.table;
+      if (tableData) {
+        dispatch(setResult(tableData));
         navigate("/result");
       }
     } catch (e) {
