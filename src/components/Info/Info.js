@@ -11,7 +11,7 @@ function Info() {
         <Button
             variant="outlined"
             onClick={() => {
-              navigate("/forms/1")
+              navigate("/form")
             }}
         >
           Go to form

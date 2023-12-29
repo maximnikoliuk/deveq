@@ -16,6 +16,7 @@ import {
 import { tableCellClasses } from "@mui/material/TableCell";
 import { styled } from "@mui/material/styles";
 import "./result.scss";
+import { useNavigate } from "react-router-dom";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -38,10 +39,21 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 function Result() {
+  const navigate = useNavigate();
   const rows = useSelector((state) => state.result.gptResult);
 
   return (
     <Container className="result-container" maxWidth>
+      <Box className="result-box" pt={"24px"}>
+        <Button
+            variant="outlined"
+            onClick={() => {
+              navigate("/form")
+            }}
+        >
+          Back to form
+        </Button>
+      </Box>
       <Typography variant="h6" pt={"24px"}>
         Your email
       </Typography>
