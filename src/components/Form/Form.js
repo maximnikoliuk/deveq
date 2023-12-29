@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Container,
   Typography,
@@ -13,7 +13,6 @@ import {
   CircularProgress,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import templatesList from "../../../public/templatesList.json";
 import "./form.scss";
 import { postPrompt } from "../../api/prompt";
 import { useDispatch } from "react-redux";
@@ -24,12 +23,22 @@ function Form() {
   const navigate = useNavigate();
   const [promt, setPromt] = useState("");
   const [template, setTemplate] = useState(1);
+  const [jsonData, setJsonData] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const { templates, responseStructure } = templatesList;
+  useEffect(() => {
+    const getJson = async () => {
+      const response = await fetch("/templatesList.json");
+      const json = await response.json();
+      setJsonData(json);
+    };
+    getJson();
+  }, []);
+
+  const { templates, responseStructure } = jsonData ?? {};
 
   let currentTemplateIndex = template - 1;
-  const currentTemplate = templates[currentTemplateIndex] ?? {};
+  const currentTemplate = templates ? templates[currentTemplateIndex] : {};
 
   const sendPromt = async () => {
     setLoading(true);
@@ -60,18 +69,18 @@ function Form() {
       <FormControl size="small" sx={{ minWidth: 175 }}>
         <InputLabel id="template-label">Template</InputLabel>
         <Select
-            labelId="template-label"
-            value={template}
-            label="Template"
-            onChange={(e) => {
-              setTemplate(+e.target.value)
-            }}
+          labelId="template-label"
+          value={template}
+          label="Template"
+          onChange={(e) => {
+            setTemplate(+e.target.value);
+          }}
         >
-          {
-            templates.map(t => (
-                <MenuItem key={`tmpl-${t.id}`} value={t.id}>{t.title}</MenuItem>
-            ))
-          }
+          {templates?.map((t) => (
+            <MenuItem key={`tmpl-${t.id}`} value={t.id}>
+              {t.title}
+            </MenuItem>
+          ))}
         </Select>
       </FormControl>
       <Typography variant="h5" p={"24px"}>
@@ -94,9 +103,7 @@ function Form() {
           alignItems="center"
           mt={2}
         >
-          {
-            loading ? <CircularProgress sx={{ marginBottom: "12px" }} /> : ""
-          }
+          {loading ? <CircularProgress sx={{ marginBottom: "12px" }} /> : ""}
           <Button
             disabled={!promt || loading}
             variant="contained"
