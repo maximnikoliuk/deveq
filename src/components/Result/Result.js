@@ -38,7 +38,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function Result() {
+function Result({ emailText, perfectEmailText }) {
   const navigate = useNavigate();
   const rows = useSelector((state) => state.result.gptResult);
 
@@ -46,18 +46,18 @@ function Result() {
     <Container className="result-container" maxWidth>
       <Box className="result-box" pt={"24px"}>
         <Button
-            variant="outlined"
-            onClick={() => {
-              navigate("/form")
-            }}
+          variant="outlined"
+          onClick={() => {
+            navigate("/form");
+          }}
         >
           Back to form
         </Button>
       </Box>
       <Typography variant="h6" pt={"24px"}>
-        Your email
+        Your email:
       </Typography>
-      <Typography variant="body1">Insert email here</Typography>
+      <Typography variant="body1">{emailText}</Typography>
       <Typography variant="h6" pt={"24px"}>
         Result
       </Typography>
@@ -87,6 +87,10 @@ function Result() {
           </Table>
         </TableContainer>
       </Box>
+      <Typography variant="h6" pt={"24px"}>
+        An ideal email:
+      </Typography>
+      <Typography variant="body1">{perfectEmailText}</Typography>
     </Container>
   );
 }

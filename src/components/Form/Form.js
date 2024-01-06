@@ -18,7 +18,7 @@ import { postPrompt } from "../../api/prompt";
 import { useDispatch } from "react-redux";
 import { setResult } from "../../redux/sliceResult";
 
-function Form() {
+function Form({ setEmailText, setPerfectEmailText }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [promt, setPromt] = useState("");
@@ -43,6 +43,10 @@ function Form() {
   const sendPromt = async () => {
     setLoading(true);
     try {
+      //for displaying on result page
+      setEmailText(promt);
+      setPerfectEmailText(currentTemplate?.perfectEmail);
+
       const populatedInstructions = currentTemplate?.instructions?.replace(
         "%Email%",
         promt
@@ -89,8 +93,8 @@ function Form() {
       <Box component="form" noValidate autoComplete="off" pb={"24px"}>
         <TextField
           variant="outlined"
-          label="Promt"
-          placeholder="Leave your promt..."
+          label="Text"
+          placeholder="Leave your text..."
           multiline
           minRows={3}
           fullWidth
