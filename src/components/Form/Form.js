@@ -87,6 +87,14 @@ function Form({ setEmailText, setPerfectEmailText }) {
           ))}
         </Select>
       </FormControl>
+      {
+        currentTemplate.visualTip ? <>
+          <Typography variant="h6" pt={"24px"}>
+            Tip for your promt:
+          </Typography>
+          <Typography variant="body1">{currentTemplate.visualTip}</Typography>
+        </> : ""
+      }
       <Typography variant="h5" p={"24px"}>
         Insert your promt
       </Typography>
